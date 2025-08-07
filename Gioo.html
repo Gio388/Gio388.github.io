@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gio's Café</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+      
+        .carousel {
+  width: 100%;
+  max-width: 300px;
+  overflow: hidden;
+  margin: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.carousel-track {
+  display: flex;
+  animation: scroll 12s linear infinite;
+}
+
+.carousel-track img {
+  width: 100%;
+  flex-shrink: 0;
+}
+
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  33% { transform: translateX(-100%); }
+  66% { transform: translateX(-200%); }
+  100% { transform: translateX(0); }
+}
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f8f8f83b;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        
+        header {
+            background-color: #051c3f; 
+            color: #fff;
+            padding: 40px 0;
+            text-align: center;
+            position: relative;
+        }
+
+        header h1 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 4em;
+            margin-bottom: 10px;
+            color: #F4EADF; 
+        }
+
+        header p {
+            font-size: 1.2em;
+            margin-top: 0;
+        }
+
+        .header-image {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+      
+        .welcome-section {
+            text-align: center;
+            padding: 60px 20px;
+            background-color: #fff;
+            border-bottom: 1px solid #eee;
+        }
+
+        .welcome-section h2 {
+            font-size: 2.5em;
+            color: #5C3D2E;
+            margin-bottom: 20px;
+        }
+
+     
+        .navigation-buttons {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: #f4f4f4;
+        }
+
+        .navigation-buttons .btn {
+            display: inline-block;
+            background-color: #A0522D; 
+            color: #fff;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 10px;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease;
+        }
+
+        .navigation-buttons .btn:hover {
+            background-color: #8B4513; 
+        }
+
+      
+        .social-media {
+            text-align: center;
+            padding: 50px 20px;
+            background-color: #F4EADF; 
+        }
+
+        .social-media h2 {
+            font-size: 2em;
+            color: #5C3D2E;
+            margin-bottom: 25px;
+        }
+
+        .social-icons a {
+            display: inline-block;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+
+        .social-icons img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            transition: transform 0.3s ease;
+        }
+
+        .social-icons img:hover {
+            transform: scale(1.1);
+        }
+
+       
+        .menu-section, .weekly-menu-section {
+            padding: 60px 20px;
+            background-color: #fff;
+            display: none; 
+            text-align: center;
+        }
+
+        .menu-section h2, .weekly-menu-section h2 {
+            font-size: 2.5em;
+            color: #5C3D2E;
+            margin-bottom: 30px;
+        }
+
+        .menu-item, .weekly-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap; 
+        }
+
+        .menu-item img, .weekly-item img {
+            width: 200px;
+            height: auto;
+            border-radius: 8px;
+            margin-right: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .menu-item-description, .weekly-item-description {
+            max-width: 600px;
+            text-align: left;
+        }
+
+        .menu-item-description h3, .weekly-item-description h3 {
+            color: #A0522D;
+            font-size: 1.8em;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        .menu-item-description p, .weekly-item-description p {
+            color: #555;
+            font-size: 1.1em;
+        }
+
+       
+        .scattered-image {
+            max-width: 80%;
+            height: auto;
+            display: block;
+            margin: 50px auto;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 25px 0;
+            font-size: 0.9em;
+            margin-top: 50px;
+        }
+
+        
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 3em;
+            }
+
+            .navigation-buttons .btn {
+                padding: 12px 25px;
+                font-size: 1em;
+            }
+
+            .social-icons img {
+                width: 40px;
+                height: 40px;
+            }
+
+            .menu-item, .weekly-item {
+                flex-direction: column;
+            }
+
+            .menu-item img, .weekly-item img {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+
+            .menu-item-description, .weekly-item-description {
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 2.5em;
+            }
+
+            .welcome-section h2 {
+                font-size: 2em;
+            }
+
+            .social-media h2 {
+                font-size: 1.8em;
+            }
+
+            .navigation-buttons .btn {
+                display: block;
+                margin: 10px auto;
+                max-width: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Gio's Café</h1>
+            <p><i>Cafe Restaurante</i></p>
+            <img src="IMG_20250728_231852.jpg" alt="."style="width: 200px; height: auto;"  class="header-image">
+        </div>
+         
+    </header>
+
+    <main>
+        <section class="welcome-section">
+            <div class="container">
+                <h2>¡Bienvenidos a Gio's Café!</h2>
+                <p>¡La calidad de nuestros alimentos nos distinguen!. </p>
+            </div>
+             <div class="container">
+            <h2>Contactanos por Whatsapp</h2> 
+             <div class="social-icons">
+                    <a href="+52 1 446 144 8403" target="_blank">
+                       <img src="IMG_20250805_115902.jpg" alt="Whatsapp"; style="width: 50px; height: auto;"  class="header-image">
+            <p><i>4461448403</i></p>
+           
+           
+        </div>
+        </section>
+
+        <section class="navigation-buttons">
+            <div class="container">
+                <a href="#cartas" class="btn">Nuestras Cartas</a>
+                <a href="#menu-semanal" class="btn">Menú Semanal</a>
+            </div>
+        </section>
+
+        <section class="social-media">
+            <div class="container">
+                <h2>Síguenos en nuestras redes</h2>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/_gioscaferestaurante_?igsh=MTI2NW5weDJpMWJxYg==" target="_blank">
+                       <img src="IMG_20250804_234204.jpg" alt="instagram"; style="width: 50px; height: auto;"  class="header-image">
+        
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=61571966198791" target="_blank">
+                        <img src="IMG_20250804_234129.jpg" alt="facebook"; style="width: 50px; height: auto;"  class="header-image">
+        
+                    </a>
+                </div>
+            </div>
+        </section>
+        <div class="carousel">
+  <div class="carousel-track">
+    <img src="IMG-20250724-WA0001.jpg" alt="Pan Frances">
+    <img src="IMG-20250724-WA0003.jpg" alt="Imagen ">
+    <img src="IMG-20250724-WA0007.jpg" alt="Imagen ">
+    <img src="IMG-20250724-WA0010.jpg" alt="Imagen ">
+  </div>
+</div>
+
+  
+        <section id="cartas" class="menu-section">
+            <div class="container">
+                <h2>Nuestras Cartas</h2>
+                <div class="menu-item">
+                     <img src="IMG_20250804_233842.jpg" alt="."style="width: 500px; height: auto;"  class="imagen-izquierda"> 
+                   
+                </div>
+                <div class="menu-item">
+                     <img src="IMG_20250804_233807.jpg" alt="."style="width: 500px; height: auto;"  class="header-image"> 
+                   
+                </div>
+                <div class="menu-item">
+                     <img src="IMG_20250804_233746.jpg" alt="."style="width: 500px; height: auto;"  class="imagen-izquierda"> 
+                   
+                </div>
+                <div class="menu-item">
+                     <img src="IMG_20250804_233724.jpg" alt="."style="width: 500px; height: auto;"  class="header-image"> 
+                   
+                </div>
+                <div class="menu-item">
+                     <img src="IMG_20250804_233611.jpg" alt="."style="width: 500px; height: auto;"  class="imagen-izquierda"> 
+                   
+                </div>
+            </div>
+        </section>
+
+        
+
+        <section id="menu-semanal" class="weekly-menu-section">
+            <div class="container">
+                <h2>Menú Semanal</h2>
+                <h3>Lunes</h3>
+                 <div class="menu-item">
+                     <img src="IMG-20250804-WA0004.jpg" alt="."style="width: 500px; height: auto;"  class="imagen-izquierda"> 
+                   
+                </div>
+                <h3>Martes</h3>
+                <div class="menu-item">
+                     <img src="IMG-20250805-WA0003.jpg" alt="."style="width: 500px; height: auto;"  class="header-image"> 
+                   
+                </div>
+                <h3>Miercoles</h3>
+                <div class="menu-item">
+                     <img src="IMG-20250805-WA0016.jpg" alt="."style="width: 500px; height: auto;"  class="imagen-izquierda"> 
+                   
+                </div>
+                <h3>Jueves</h3>
+                <div class="menu-item">
+                     <img src="IMG-20250805-WA0017.jpg" alt="."style="width: 500px; height: auto;"  class="header-image"> 
+                   
+                </div>
+                <h3>Viernes</h3>
+                <div class="menu-item">
+                     <img src="IMG-20250807-WA0006.jpg" alt="."style="width: 500px; height: auto;"  class="imagen-izquierda"> 
+                   
+                </div>
+    
+                
+         </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Gio's Café. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+       
+        document.addEventListener('DOMContentLoaded', () => {
+            const cartasBtn = document.querySelector('a[href="#cartas"]');
+            const menuSemanalBtn = document.querySelector('a[href="#menu-semanal"]');
+            const cartasSection = document.getElementById('cartas');
+            const menuSemanalSection = document.getElementById('menu-semanal');
+
+           
+            function hideAllMenuSections() {
+                cartasSection.style.display = 'none';
+                menuSemanalSection.style.display = 'none';
+            }
+
+            
+            hideAllMenuSections();
+
+            cartasBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                hideAllMenuSections();
+                cartasSection.style.display = 'block';
+                cartasSection.scrollIntoView({ behavior: 'smooth' }); 
+            });
+
+            menuSemanalBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                hideAllMenuSections();
+                menuSemanalSection.style.display = 'block';
+                menuSemanalSection.scrollIntoView({ behavior: 'smooth' }); 
+            });
+        });
+    </script>
+
+</body>
+</html>
